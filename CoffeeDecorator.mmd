@@ -1,0 +1,43 @@
+---
+title: Decorator
+---
+
+classDiagram
+    client--|>Coffee
+    CoffeeDecorator--|>Coffee
+    Coffee<|--MilkCoffee
+    Coffee<|--ExpressoCoffee
+    CoffeeWithSugar--|>CoffeeDecorator
+    CoffeeWithChocolate--|>CoffeeDecorator
+
+    class client{
+        oui ! Je suis client
+    }
+
+    class CoffeeDecorator {
+    <<interface>>
+    Coffee: coffee
+    addTopings()
+    }
+
+    class CoffeeWithSugar {
+    addTopings(String toping) String
+    }
+
+    class CoffeeWithChocolate {
+    addTopings(String toping) String
+    }
+
+    class Coffee
+    <<interface>> Coffee
+    Coffee: renderCoffee() String
+
+    class MilkCoffee{
+        -getPrice() Integer
+        -renderCoffee() String
+    }
+    class ExpressoCoffee{
+        -getPrice() Integer
+        -renderCoffee() String
+    }
+

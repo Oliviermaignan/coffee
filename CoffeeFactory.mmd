@@ -1,0 +1,25 @@
+---
+title: Factory
+---
+
+classDiagram
+CoffeeFactory--|>Coffee
+Coffee--|>MilkCoffee
+Coffee--|>ExpressoCoffee
+class CoffeeFactory{
+-createCoffee(coffeeType) coffee
+}
+
+class Coffee
+<<interface>> Coffee
+Coffee: renderCoffee() String
+
+class MilkCoffee{
+-getPrice() Integer
+-renderCoffee() String
+}
+class ExpressoCoffee{
+-getPrice() Integer
+-renderCoffee() String
+}
+

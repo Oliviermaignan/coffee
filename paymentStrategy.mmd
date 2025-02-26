@@ -1,0 +1,29 @@
+---
+title: Strategy
+---
+classDiagram
+PaymentStrategy--|>PaymentMethod
+PaymentMethod--|>CreditCard
+PaymentMethod--|>BankTransfer
+PaymentMethod--|>Paypal
+
+class PaymentStrategy{
+    -String paymentState
+    -PaymentMethod paymentMethod
+    +setStrategy() Void
+}
+
+<<interface>> PaymentMethod
+class PaymentMethod{
+    executePayment() String
+}
+class CreditCard{
+    +executePayment() String
+}
+class Paypal{
+    +executePayment() String
+}
+class BankTransfer{
+    +executePayment() String
+}
+
