@@ -1,0 +1,34 @@
+---
+title: Observer
+---
+
+classDiagram
+    CoffeManager--|>EventManager
+    EventManager--|>EventListener
+    OrderView--|>EventListener
+
+    class CoffeManager{
+        -events: EventManager
+    }
+
+    class EventManager {
+        -Listener[] listeners
+        -subscribe(EventType, listener)
+        -unsubscribe(EventType, listener)
+        -notify(EventType, data)
+    }
+
+    class EventListener{
+        <<interface>>
+        -update(context)
+    }
+
+    class OrderView{
+        -update(context)
+    }
+
+%%manager publie a la vue a la fin
+%%le resultat = "voici votre espresso avec du sucre"
+%%le manager implemente la method update
+%%du subject c'est lui que tout le monde regarde
+%%la vue est le listeners
