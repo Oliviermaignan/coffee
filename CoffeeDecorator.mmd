@@ -11,21 +11,24 @@ classDiagram
     CoffeeWithChocolate--|>CoffeeDecorator
 
     class client{
-        oui ! Je suis client
+        -Coffee: makeCoffe()
     }
 
     class CoffeeDecorator {
     <<interface>>
     Coffee: coffee
+    CoffeeDecorator(Coffee c)
     addTopings()
     }
 
     class CoffeeWithSugar {
-    addTopings(String toping) String
+        CoffeeWithSugar(Coffee coffee)
+        addTopings(String toping) String
     }
 
     class CoffeeWithChocolate {
-    addTopings(String toping) String
+        CoffeeWithChocolate(Coffee coffee)
+        addTopings(String toping) String
     }
 
     class Coffee
@@ -33,10 +36,12 @@ classDiagram
     Coffee: renderCoffee() String
 
     class MilkCoffee{
+        -price: Integer
         -getPrice() Integer
         -renderCoffee() String
     }
     class ExpressoCoffee{
+        -price: Integer
         -getPrice() Integer
         -renderCoffee() String
     }

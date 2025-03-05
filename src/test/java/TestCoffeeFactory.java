@@ -1,5 +1,6 @@
 import coffeeFactory.CoffeeFactory;
 import coffeeFactory.coffeeEntities.Coffee;
+import coffeeFactory.coffeeEntities.ExpressoCoffee;
 import coffeeFactory.coffeeEntities.MilkCoffee;
 import org.junit.jupiter.api.Test;
 
@@ -17,7 +18,7 @@ public class TestCoffeeFactory {
     public void testExpressoCoffee() {
         Coffee milkCoffee = CoffeeFactory.createCoffee("ExpressoCoffee");
         assertNotNull(milkCoffee);
-        assertInstanceOf(MilkCoffee.class, milkCoffee);
+        assertInstanceOf(ExpressoCoffee.class, milkCoffee);
 //        assertInstanceOf(Coffee, milkCoffee);
     }
 

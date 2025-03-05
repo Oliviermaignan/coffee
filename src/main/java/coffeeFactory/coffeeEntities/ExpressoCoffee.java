@@ -6,6 +6,6 @@ package coffeeFactory.coffeeEntities;
 public class ExpressoCoffee implements Coffee {
     @Override
     public String renderCoffee() {
-        return "This is an Expresso!";
+        return "This is an Expresso Coffee!";
     }
 }
